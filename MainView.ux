@@ -1,0 +1,72 @@
+<App Theme="Basic" Background="#fff">
+	<DockPanel>
+		<Panel Alignment="Top" HitTestMode="None">
+			<StatusBarBackground Dock="Top"/>
+			<Rectangle Height="300%" MaxHeight="10000000">
+				<LinearGradient>
+					<GradientStop Offset="0" Color="#FFFD"/>
+					<GradientStop Offset="0.33" Color="#FFFD"/>
+					<GradientStop Offset="1" Color="#0000"/>
+				</LinearGradient>
+			</Rectangle>
+		</Panel>
+
+		<Font File="Assets/Roboto-Regular.ttf" ux:Global="Regular" />
+		<Font File="Assets/Roboto-Medium.ttf" ux:Global="Medium" />
+
+		<Text ux:Class="Header" Font="Medium" FontSize="23"  TextColor="#fff" Margin="50,0,0,0" />
+		<Text ux:Class="Body" Font="Regular" FontSize="17" TextColor="#fff" TextWrapping="Wrap" />
+
+		<Image ux:Class="BackgroundImage" StretchMode="UniformToFill" />
+
+		<DockPanel>
+			<PageControl ux:Name="slides" ClipToBounds="true">
+
+				<StackPanel ux:Class="Info" ux:Name="self" Padding="18" Alignment="Top" Background="#fff">
+					<ImageFill File="Assets/nav-top-bg.png" />
+					<!-- <BackgroundImage File="Assets/nav-top-bg.png" /> -->
+			        <!-- <LinearGradient StartPoint="-.5,.5" EndPoint=".75,0.5">
+			            <GradientStop Offset="0" Color="#FFFFFF" />
+			            <GradientStop Offset="1" Color="#000A2E" />
+			        </LinearGradient> -->
+					<DropShadow Color="0, 0, 0, 0.1" Size="30" Angle="-90" Distance="8" />
+
+					<WhileTrue ux:Name="slideOut" Value="true">
+						<Move Y="-150" Duration="0.5" Easing="CubicIn" />
+						<Change self.Opacity="0.0" Duration="0.5" Easing="CircularIn" />
+					</WhileTrue>
+
+					<ActivatingAnimation>
+						<Change slideOut.Value="false" />
+					</ActivatingAnimation>
+				</StackPanel>
+
+				<Page>
+					<Info>
+						<Grid Columns="1*,1*" Dock="Top" Padding="0">
+							<Image File="Assets/friends-icon.png" StretchMode="PointPrecise"/>
+					    	<Header>Friends</Header>
+					    </Grid>
+					</Info>
+					<BackgroundImage File="Assets/background-gradient.png" />
+				</Page>
+
+				<Page>
+					<Info>
+						<Header>Chat</Header>
+					</Info>
+					<BackgroundImage File="Assets/background-gradient.png" />
+				</Page>
+
+				<Page>
+					<Info>
+						<Header>Cards</Header>
+					</Info>
+					<BackgroundImage File="Assets/background-gradient.png" />
+				</Page>
+
+			</PageControl>
+		</DockPanel>
+		<BottomBarBackground Dock="Bottom" />
+	</DockPanel>
+</App>
