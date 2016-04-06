@@ -1,16 +1,16 @@
 <App Theme="Basic" Background="#fff">
 
 	<DockPanel>
-		<Panel Alignment="Top" HitTestMode="None">
-			<StatusBarBackground Dock="Top"/>
-			<Rectangle Height="300%" MaxHeight="10000000">
+		<!-- <Panel Alignment="Top" HitTestMode="None"> -->
+			<!-- <StatusBarBackground Dock="Top"/> -->
+			<!-- <Rectangle Height="300%" MaxHeight="10000000">
 				<LinearGradient>
 					<GradientStop Offset="0" Color="#FFFD"/>
 					<GradientStop Offset="0.33" Color="#FFFD"/>
 					<GradientStop Offset="1" Color="#0000"/>
 				</LinearGradient>
-			</Rectangle>
-		</Panel>
+			</Rectangle> -->
+		<!-- </Panel> -->
 
 		<Font File="Assets/Roboto-Regular.ttf" ux:Global="Regular" />
 		<Font File="Assets/Roboto-Medium.ttf" ux:Global="Medium" />
@@ -43,6 +43,19 @@
 				</StackPanel>
 
 				<Page>
+					<Viewport Perspective="400">
+				        <Panel>
+				            <Rectangle Width="200" Height="200" Background="#2ecc71">
+				        		<NativeViewHost>
+				        			<WebView Url="http://i.giphy.com/NOzweVeOkjz8s.gif" />
+				        			<Clicked>
+					                    <Rotate DegreesX="360" Duration="1.5" Easing="QuadraticInOut" DurationBack="0" />
+					                </Clicked>
+				        		</NativeViewHost>
+				                
+				            </Rectangle>
+				        </Panel>
+				    </Viewport>
 					<Info>
 						<Grid Columns="1*,1*" Dock="Top" Padding="0">
 							<Image File="Assets/friends-icon.png" StretchMode="PointPrecise"/>
@@ -66,6 +79,24 @@
 					<Info>
 						<Header>Cards</Header>
 					</Info>
+				    <StackPanel Alignment="Center"  MinWidth="200">
+				        <!-- 
+				        <JavaScript ux:Global="Parse" File="parse-1.5.0.js"/>
+				        <JavaScript File="Parse.js"/> -->
+				        <DockPanel>
+				            <Text Dock="Left" Margin="0,0,10,0" TextColor="#fff">Username: </Text>
+				            <TextInput Value="{username}" TextColor="#fff"/>
+				        </DockPanel>
+				        <DockPanel>
+				            <Text Dock="Left" Margin="0,0,10,0" TextColor="#fff">Email: </Text>
+				            <TextInput Value="{email}" TextColor="#fff"/>
+				        </DockPanel>
+				        <DockPanel>
+				            <Text Dock="Left" Margin="0,0,10,0" TextColor="#fff">Password: </Text>
+				            <TextInput Value="{password}" TextColor="#fff" IsPassword="true"/>
+				        </DockPanel>
+				        <Button Text="SignUp" Clicked="{signup}"/>
+				    </StackPanel>
 					<BackgroundImage File="Assets/background-gradient.png" />
 				</Page>
 
