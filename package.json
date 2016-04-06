@@ -1,0 +1,22 @@
+{
+  "name": "pegg-fuse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gratzi/pegg-fuse.git"
+  },
+  "author": "",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/Gratzi/pegg-fuse/issues"
+  },
+  "homepage": "https://github.com/Gratzi/pegg-fuse#readme"
+}
